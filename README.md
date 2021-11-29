@@ -208,6 +208,23 @@ Przykład przedstawiający problem blokowo znajduje się poniżej – schemat (7
 ![Schemat1](https://user-images.githubusercontent.com/71324202/143834927-11d727cf-d571-40df-a0d4-c460214ff30d.png)
 
 ## **Zadania do samodzielnego wykonania**
+1. Stwórz funkcje max(a,b) i min(a,b), które będą zwracać większą z podanych liczb.
+2. Stwórz funkcję silnia(a), która będzie iteracyjnie (przy pomocy pętli) liczyć wartość silni z podanej liczby.
+3. Stwórz funkcję potega(liczba, wykladnik), która będzie iteracyjnie liczyć wartość potęgi o podantch parametrach.
+4. Stwórz funkcję potega(liczba, wykladnik), która będzie rekurencyjnie liczyć wartość potęgi o podanych parametrach.
+5. Korzystając z własnych funkcji stwórz kalkulator z menu dający możliwość wykonania obliczeń podanych poniżej. Każda z operacji powinna być wykonywana przrez osobną funkcj/procedurę.
+	1. dodawanie n liczb;
+	2. odejmowanie od liczby aż do momentu podania '0';
+	3. mnożenie dwóch liczb;
+	4. dzielenie liczby;
+	5. potęgowanie;
+	6. kwadrat liczby;
+	7. silnia;
+6. Stwórz funkcję liczącą wartość n-tego wyrazu [Ciągu Fibonacciego](https://pl.wikipedia.org/wiki/Ci%C4%85g_Fibonacciego)
+7. Stwórz funkcję liczącą sumę wszystkich wyrazów [Ciągu Fibonacciego](https://pl.wikipedia.org/wiki/Ci%C4%85g_Fibonacciego) koncząc na n-tym wyrazie.
+8. Stwórz funkcję liczącą wartość n-tego wyrazu ciągu określonego wzorem:
+
+![image](https://user-images.githubusercontent.com/71324202/143841510-fa248fbc-8e7d-4395-af52-66133199df04.png)
 
 ***
 [Poprzednia część](https://github.com/CyberMALab/Wiecej-o-typach-zmiennych-i-nie-tylko.git) | [Spis treści](https://github.com/CyberMALab/Wprowadzenie-do-programowania-w-j-zyku-ANSI-C.git) | [Następna część](https://github.com/CyberMALab/Comming-Soon.git)
