@@ -23,7 +23,7 @@ typ nazwa_funkcji(typ_zmiennej nazwy_parametrów,…)
 
 Deklaracji funkcji można dokonać powyżej lub poniżej funkcji `main`. W pierwszym przypadku stosujemy pełen zapis funkcji wraz z jej kodem źródłowym powyżej funkcji `main` dzięki czemu wewnątrz `main` możemy swobodnie wywoływać działanie naszej funkcji. Taki sposób jednak powoduje pewne problemy, kiedy tworzymy więcej niż jedną własną funkcję, a one odwołują się do siebie nawzajem. Dlatego preferowaną deklaracją użycia kodu, jest deklaracja funkcji poniżej funkcji `main`. W takim przypadku powyżej funkcji `main`, deklarujemy w sposób skrócony istnienie funkcji poprzez podanie jej typu, nazwy oraz typów parametrów. Takie zadeklarowanie funkcji, daje sygnał kompilatorowi „ta funkcja istnieje, ale jej kod jest podany w innym miejscu”, dzięki czemu unikamy problemów z wywoływaniem funkcji przez siebie nawzajem. Ciało takiej funkcji umieszczamy wtedy poniżej funkcji `main`.
 
-*Przykład (7.2) deklaracja funkcji przed `main`*
+*Przykład (7.0) deklaracja funkcji przed `main`*
 
 ```
 #include <stdio.h>
@@ -42,7 +42,7 @@ int main()
 
 ```
 
-*Przykład (7.3) deklaracja funkcji po `main`*
+*Przykład (7.1) deklaracja funkcji po `main`*
 
 ```
 #include <stdio.h>
@@ -66,7 +66,7 @@ double kwadrat_liczby(double liczba)
 ## **Wywołanie funkcji**
 Aby wywołać funkcję, należy podać jej identyfikator, wraz z nawiasem, wewnątrz którego podamy argumenty odpowiadające kolejnym parametrom funkcji. Działanie funkcji spowoduje, że miejsce, w którym zostanie wywołana zostanie zastąpione zwracaną wartością. Można taką funkcję wywołać wewnątrz operacji arytmetycznej (o ile typ funkcji jest odpowiedni), przy operacji przypisania (jako argument, który ma zostać przypisany, nie można przypisać wartości do funkcji, ponieważ nie jest tzw. L-wartością), lub jako argument innej funkcji, instrukcji warunkowej, w której typ zwracanej wartości jest dopuszczony. Innymi słowy funkcji można użyć wszędzie tam, gdzie ma być użyta wartość, którą zwraca dana funkcja. Funkcję typu `void`, która nie zwraca wartości wywołuje się po prostu wypisując jej nazwę i argumenty.
 
-*Przykład (7.4) wywołanie funkcji w różnych sytuacjach*
+*Przykład (7.2) wywołanie funkcji w różnych sytuacjach*
 
 ```
 #include <stdio.h>
@@ -97,9 +97,9 @@ int max(int a, int b)
 ```
 
 ## **Przekazywanie argumentów do funkcji oraz klasa pamięci `static`** 
-Do funkcji przekazywane są argumenty, w miejscu deklaracji parametrów. Aby ułatwić rozróżnienie parametru i argumentu posłużę się przykładem (7.4). Funkcja `int max(int a, int b)` ma dwa parametry a i b, natomiast w funkcji `main` w wywołaniu funkcji `max(23,10);` za argument podane jest 23 i 10. Jako argument funkcji możemy podać wartość stałą, lub zmienną. Należy pamiętać jednak, że wartość argumentu nie jest przekazywana do funkcji w oryginale, a jedynie kopiowana do parametru, przez co działanie funkcji nie wpłynie na zmienne podane w argumencie. Do sprawdzenia tego posłuży nam przykład (7.5). Jest tam również przestawiona zmienna funkcji kasy `static`. Jej działanie jest o tyle różne, od działania zwykłej zmiennej lokalnej, obszar pamięci zarezerwowany przez tą zmienną, jest zarezerwowany przez cały czas działania programu, a ona sama deklarowana jest tylko raz. Więc linijka `static int i=1;` wykona się tyko podczas pierwszego wywołania funkcji, a w każdym kolejnym zostanie ona pominięta. Trochę tak, jakby zmienna typu `static` zachowywała się jak zmienna globalna, jednak z ograniczonym dostępem. Zmodyfikowanie zmiennej tej w dowolnym momencie, zostanie zapamiętane i zmienna ta przyjmie inną wartość również w kolejnym wywołaniu tej funkcji. 
+Do funkcji przekazywane są argumenty, w miejscu deklaracji parametrów. Aby ułatwić rozróżnienie parametru i argumentu posłużę się przykładem (7.2). Funkcja `int max(int a, int b)` ma dwa parametry a i b, natomiast w funkcji `main` w wywołaniu funkcji `max(23,10);` za argument podane jest 23 i 10. Jako argument funkcji możemy podać wartość stałą, lub zmienną. Należy pamiętać jednak, że wartość argumentu nie jest przekazywana do funkcji w oryginale, a jedynie kopiowana do parametru, przez co działanie funkcji nie wpłynie na zmienne podane w argumencie. Do sprawdzenia tego posłuży nam przykład (7.3). Jest tam również przestawiona zmienna funkcji kasy `static`. Jej działanie jest o tyle różne, od działania zwykłej zmiennej lokalnej, obszar pamięci zarezerwowany przez tą zmienną, jest zarezerwowany przez cały czas działania programu, a ona sama deklarowana jest tylko raz. Więc linijka `static int i=1;` wykona się tyko podczas pierwszego wywołania funkcji, a w każdym kolejnym zostanie ona pominięta. Trochę tak, jakby zmienna typu `static` zachowywała się jak zmienna globalna, jednak z ograniczonym dostępem. Zmodyfikowanie zmiennej tej w dowolnym momencie, zostanie zapamiętane i zmienna ta przyjmie inną wartość również w kolejnym wywołaniu tej funkcji. 
 
-*Przykład (7.5) wartości zmiennych wewnątrz funkcji i poza nią oraz zmienna lokalna funkcji klasy `static`*
+*Przykład (7.3) wartości zmiennych wewnątrz funkcji i poza nią oraz zmienna lokalna funkcji klasy `static`*
 
 ```
 #include <stdio.h>
@@ -164,9 +164,9 @@ Funkcje rekurencyjne to takie funkcje, które odwołują się do samej siebie. S
 ![Rysunek1](https://user-images.githubusercontent.com/71324202/143834929-27f96821-8526-40fe-afee-24855d57a9fb.png)
 
 
-Gdzie przypadek, kiedy n=1 jest warunkiem stopu, a wszelkie inne wartości są warunkiem ogólnym. f(n-1) jest krokiem rekurencyjnym w kierunku warunku stopu, zakładając, że n jest podana jako nieujemna liczba całkowita. Taką funkcję reprezentuje program z przykładu (7.6).
+Gdzie przypadek, kiedy n=1 jest warunkiem stopu, a wszelkie inne wartości są warunkiem ogólnym. f(n-1) jest krokiem rekurencyjnym w kierunku warunku stopu, zakładając, że n jest podana jako nieujemna liczba całkowita. Taką funkcję reprezentuje program z przykładu (7.4).
 
-*Przykład (7.6) funkcja silnia rekurencyjnie*
+*Przykład (7.4) funkcja silnia rekurencyjnie*
 
 ```
 #include <stdio.h>
@@ -203,7 +203,7 @@ Może więcej przykładów funkcji rekurencyjnej?
 Nie ptorzeba
 Przykład przedstawiający problem blokowo znajduje się poniżej – schemat (7.1). W jego pierwszej części zatytułowanej jako *Wywołanie kolejnych funkcji silnia – rekurencyjnie* , mamy pokazane wywołanie wszystkich funkcji aż do uzyskania warunku stopu. W warunku stopu wartość funkcji jest znana, więc kolejna część *Obliczanie kolejnych argumentów…* pokazuje nam kolejne wykonania instrukcji `return` w postaci strzałek powrotnych. W ten sposób wartości kolejnych wywołań funkcji stają się znane, aż do momentu w którym uzyskamy wynik dla interesującego nas argumentu. 
 
-*Schemat (7.1) działanie funkcji silnia z przykładu 7.6, dla argumentu n=4.*
+*Schemat (7.1) działanie funkcji silnia z przykładu 7.4, dla argumentu n=4.*
 
 ![Schemat1](https://user-images.githubusercontent.com/71324202/143834927-11d727cf-d571-40df-a0d4-c460214ff30d.png)
 
