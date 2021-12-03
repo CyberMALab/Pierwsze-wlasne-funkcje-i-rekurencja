@@ -229,6 +229,6 @@ Przykład przedstawiający problem blokowo znajduje się poniżej – schemat (7
 9. Napisz funkcje ceiling, floor i round, odzwierciedlające funkcje matematyczne sufit i podłoga oraz zaokrąglenie matematyczne (skorzystaj z jawnej konwersji typów).
 
 ***
-[Poprzednia część](https://github.com/CyberMALab/Wiecej-o-typach-zmiennych-i-nie-tylko.git) | [Spis treści](https://github.com/CyberMALab/Wprowadzenie-do-programowania-w-j-zyku-ANSI-C.git) | [Następna część](https://github.com/CyberMALab/Comming-Soon.git)
+[Poprzednia część](https://github.com/CyberMALab/Wiecej-o-typach-zmiennych-i-nie-tylko.git) | [Spis treści](https://github.com/CyberMALab/Wprowadzenie-do-programowania-w-j-zyku-ANSI-C.git) | [Następna część](https://github.com/CyberMALab/Tablice-jednowymiarowe.git)
 ***
 &copy; Cyberspace Modelling and Analysis Laboratory
