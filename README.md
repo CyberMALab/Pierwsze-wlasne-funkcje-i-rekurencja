@@ -207,8 +207,8 @@ Przykład przedstawiający problem blokowo znajduje się poniżej – schemat (7
 ## **Zadania do samodzielnego wykonania**
 1. Stwórz funkcje max(a,b) i min(a,b), które będą zwracać większą z podanych liczb.
 2. Stwórz funkcję silnia(a), która będzie iteracyjnie (przy pomocy pętli) liczyć wartość silni z podanej liczby.
-3. Stwórz funkcję potega(liczba, wykładnik), która będzie iteracyjnie liczyć wartość potęgi o podanych parametrach.
-4. Stwórz funkcję potega(liczba, wykładnik), która będzie rekurencyjnie liczyć wartość potęgi o podanych parametrach.
+3. Stwórz funkcję `potega(liczba, wykladnik)`, która będzie iteracyjnie liczyć wartość potęgi o podanych parametrach.
+4. Stwórz funkcję `potega(liczba, wykladnik)`, która będzie rekurencyjnie liczyć wartość potęgi o podanych parametrach.
 5. Korzystając z własnych funkcji stwórz kalkulator z menu dający możliwość wykonania obliczeń podanych poniżej. Każda z operacji powinna być wykonywana przez osobną funkcję/procedurę.
 	1. dodawanie n liczb;
 	2. odejmowanie od liczby aż do momentu podania '0';
