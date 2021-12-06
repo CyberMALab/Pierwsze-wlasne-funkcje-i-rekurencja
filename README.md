@@ -198,9 +198,6 @@ unsigned silnia (unsigned n)
 
 >6
 
-Może więcej przykładów funkcji rekurencyjnej?
-
-Nie ptorzeba
 Przykład przedstawiający problem blokowo znajduje się poniżej – schemat (7.1). W jego pierwszej części zatytułowanej jako *Wywołanie kolejnych funkcji silnia – rekurencyjnie* , mamy pokazane wywołanie wszystkich funkcji aż do uzyskania warunku stopu. W warunku stopu wartość funkcji jest znana, więc kolejna część *Obliczanie kolejnych argumentów…* pokazuje nam kolejne wykonania instrukcji `return` w postaci strzałek powrotnych. W ten sposób wartości kolejnych wywołań funkcji stają się znane, aż do momentu w którym uzyskamy wynik dla interesującego nas argumentu. 
 
 *Schemat (7.1) działanie funkcji silnia z przykładu 7.4, dla argumentu n=4.*
