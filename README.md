@@ -21,7 +21,7 @@ typ nazwa_funkcji(typ_zmiennej nazwy_parametrów,…)
 
 ```
 
-Deklaracji funkcji można dokonać powyżej lub poniżej funkcji `main`. W pierwszym przypadku stosujemy pełen zapis funkcji wraz z jej kodem źródłowym powyżej funkcji `main` dzięki czemu wewnątrz `main` możemy swobodnie wywoływać działanie naszej funkcji. Taki sposób jednak powoduje pewne problemy, kiedy tworzymy więcej niż jedną własną funkcję, a one odwołują się do siebie nawzajem. Dlatego preferowaną deklaracją użycia kodu, jest deklaracja funkcji poniżej funkcji `main`. W takim przypadku powyżej funkcji `main`, deklarujemy w sposób skrócony istnienie funkcji poprzez podanie jej typu, nazwy oraz typów parametrów. Takie zadeklarowanie funkcji, daje sygnał kompilatorowi „ta funkcja istnieje, ale jej kod jest podany w innym miejscu”, dzięki czemu unikamy problemów z wywoływaniem funkcji przez siebie nawzajem. Ciało takiej funkcji umieszczamy wtedy poniżej funkcji `main`.
+Deklaracji funkcji można dokonać powyżej lub poniżej funkcji `main`. W pierwszym przypadku stosujemy pełen zapis funkcji wraz z jej kodem źródłowym powyżej funkcji `main` dzięki czemu wewnątrz `main` możemy swobodnie wywoływać działanie naszej funkcji. Taki sposób jednak powoduje pewne problemy, kiedy tworzymy więcej niż jedną własną funkcję, a one odwołują się do siebie nawzajem. Dlatego preferowaną deklaracją użycia kodu, jest deklaracja funkcji poniżej funkcji `main`. W takim przypadku powyżej funkcji `main`, deklarujemy w sposób skrócony istnienie funkcji poprzez podanie jej typu, nazwy oraz typów parametrów. Takie zadeklarowanie funkcji, nazywa się prototypem i daje sygnał kompilatorowi „ta funkcja istnieje, ale jej kod jest podany w innym miejscu”, dzięki czemu unikamy problemów z wywoływaniem funkcji przez siebie nawzajem. Ciało takiej funkcji umieszczamy wtedy poniżej funkcji `main`.
 
 *Przykład (7.0) deklaracja funkcji przed `main`*
 
@@ -42,7 +42,7 @@ int main()
 
 ```
 
-*Przykład (7.1) deklaracja funkcji po `main`*
+*Przykład (7.1) definicja funkcji po `main`*
 
 ```
 #include <stdio.h>
@@ -97,7 +97,7 @@ int max(int a, int b)
 ```
 
 ## **Przekazywanie argumentów do funkcji oraz klasa pamięci `static`** 
-Do funkcji przekazywane są argumenty, w miejscu deklaracji parametrów. Aby ułatwić rozróżnienie parametru i argumentu posłużę się przykładem (7.2). Funkcja `int max(int a, int b)` ma dwa parametry a i b, natomiast w funkcji `main` w wywołaniu funkcji `max(23,10);` za argument podane jest 23 i 10. Jako argument funkcji możemy podać wartość stałą, lub zmienną. Należy pamiętać jednak, że wartość argumentu nie jest przekazywana do funkcji w oryginale, a jedynie kopiowana do parametru, przez co działanie funkcji nie wpłynie na zmienne podane w argumencie. Do sprawdzenia tego posłuży nam przykład (7.3). Jest tam również przestawiona zmienna funkcji kasy `static`. Jej działanie jest o tyle różne, od działania zwykłej zmiennej lokalnej, obszar pamięci zarezerwowany przez tą zmienną, jest zarezerwowany przez cały czas działania programu, a ona sama deklarowana jest tylko raz. Więc linijka `static int i=1;` wykona się tyko podczas pierwszego wywołania funkcji, a w każdym kolejnym zostanie ona pominięta. Trochę tak, jakby zmienna typu `static` zachowywała się jak zmienna globalna, jednak z ograniczonym dostępem. Zmodyfikowanie zmiennej tej w dowolnym momencie, zostanie zapamiętane i zmienna ta przyjmie inną wartość również w kolejnym wywołaniu tej funkcji. 
+Argumenty przekazywane są do funkcji, w miejscu deklaracji parametrów. Aby ułatwić rozróżnienie parametru i argumentu posłużę się przykładem (7.2). Funkcja `int max(int a, int b)` ma dwa parametry a i b, natomiast w funkcji `main` w wywołaniu funkcji `max(23,10);` za argument podane jest 23 i 10. Jako argument funkcji możemy podać wartość stałą, lub zmienną. Należy pamiętać jednak, że wartość argumentu nie jest przekazywana do funkcji w oryginale, a jedynie kopiowana do parametru, przez co działanie funkcji nie wpłynie na zmienne podane w argumencie. Do sprawdzenia tego posłuży nam przykład (7.3). Jest tam również przestawiona zmienna funkcji kasy `static`. Jej działanie jest o tyle różne, od działania zwykłej zmiennej lokalnej, że obszar pamięci zarezerwowany przez tą zmienną, jest zarezerwowany przez cały czas działania programu, a ona sama deklarowana jest tylko raz. Więc linijka `static int i=1;` wykona się tyko podczas pierwszego wywołania funkcji, a w każdym kolejnym zostanie ona pominięta. Trochę tak, jakby zmienna typu `static` zachowywała się jak zmienna globalna, jednak z ograniczonym dostępem. Zmodyfikowanie zmiennej tej w dowolnym momencie, zostanie zapamiętane i zmienna ta przyjmie inną wartość również w kolejnym wywołaniu tej funkcji. 
 
 *Przykład (7.3) wartości zmiennych wewnątrz funkcji i poza nią oraz zmienna lokalna funkcji klasy `static`*
 
@@ -117,7 +117,7 @@ void parametry(int a, int b)
 
 int main() {
 	int a=3,b=5;
-	printf("\nPRZED WYWOLAIEM\n") ;
+	printf("\nPRZED WYWOLANIEM\n") ;
 	printf("a=%d b=%d",a,b);
 	
 	parametry(a,b);
@@ -136,7 +136,7 @@ int main() {
 
 *Wynik działania programu:* 
 
->PRZED WYWOLAIEM
+>PRZED WYWOLANIEM
 >
 >a=3 b=5
 >
@@ -207,9 +207,9 @@ Przykład przedstawiający problem blokowo znajduje się poniżej – schemat (7
 ## **Zadania do samodzielnego wykonania**
 1. Stwórz funkcje max(a,b) i min(a,b), które będą zwracać większą z podanych liczb.
 2. Stwórz funkcję silnia(a), która będzie iteracyjnie (przy pomocy pętli) liczyć wartość silni z podanej liczby.
-3. Stwórz funkcję potega(liczba, wykladnik), która będzie iteracyjnie liczyć wartość potęgi o podantch parametrach.
-4. Stwórz funkcję potega(liczba, wykladnik), która będzie rekurencyjnie liczyć wartość potęgi o podanych parametrach.
-5. Korzystając z własnych funkcji stwórz kalkulator z menu dający możliwość wykonania obliczeń podanych poniżej. Każda z operacji powinna być wykonywana przrez osobną funkcj/procedurę.
+3. Stwórz funkcję potega(liczba, wykładnik), która będzie iteracyjnie liczyć wartość potęgi o podanych parametrach.
+4. Stwórz funkcję potega(liczba, wykładnik), która będzie rekurencyjnie liczyć wartość potęgi o podanych parametrach.
+5. Korzystając z własnych funkcji stwórz kalkulator z menu dający możliwość wykonania obliczeń podanych poniżej. Każda z operacji powinna być wykonywana przez osobną funkcję/procedurę.
 	1. dodawanie n liczb;
 	2. odejmowanie od liczby aż do momentu podania '0';
 	3. mnożenie dwóch liczb;
@@ -218,7 +218,7 @@ Przykład przedstawiający problem blokowo znajduje się poniżej – schemat (7
 	6. kwadrat liczby;
 	7. silnia;
 6. Stwórz funkcję liczącą wartość n-tego wyrazu [Ciągu Fibonacciego](https://pl.wikipedia.org/wiki/Ci%C4%85g_Fibonacciego)
-7. Stwórz funkcję liczącą sumę wszystkich wyrazów [Ciągu Fibonacciego](https://pl.wikipedia.org/wiki/Ci%C4%85g_Fibonacciego) koncząc na n-tym wyrazie.
+7. Stwórz funkcję liczącą sumę wszystkich wyrazów [Ciągu Fibonacciego](https://pl.wikipedia.org/wiki/Ci%C4%85g_Fibonacciego) kończąc na n-tym wyrazie.
 8. Stwórz funkcję liczącą wartość n-tego wyrazu ciągu określonego wzorem:
 
 ![image](https://user-images.githubusercontent.com/71324202/143841510-fa248fbc-8e7d-4395-af52-66133199df04.png)
