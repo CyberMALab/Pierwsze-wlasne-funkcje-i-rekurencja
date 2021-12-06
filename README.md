@@ -110,24 +110,24 @@ void parametry(int a, int b)
 	static int i=1;
 	a=a+1;
 	b=b+3;
-	printf("\nWEWNATRZ FUNCKJI wywołanie %d\n", i) ;
+	printf("\nWEWNATRZ FUNCKJI wywolanie %d\n", i) ;
 	printf("a=%d b=%d",a,b);
 	i++;
 }
 
 int main() {
 	int a=3,b=5;
-	printf("\nPRZED WYWOŁANIEM\n") ;
+	printf("\nPRZED WYWOLANIEM\n") ;
 	printf("a=%d b=%d",a,b);
 	
 	parametry(a,b);
 	
-	printf("\nPO WYWOŁANIU 1\n") ;
+	printf("\nPO WYWOLANIU 1\n") ;
 	printf("a=%d b=%d",a,b);
 	
 	parametry(a,b);
 	
-	printf("\nPO WYWOŁANIU 2\n") ;
+	printf("\nPO WYWOLANIU 2\n") ;
 	printf("a=%d b=%d",a,b);
 	return 0;
 }
@@ -136,23 +136,23 @@ int main() {
 
 *Wynik działania programu:* 
 
->PRZED WYWOŁANIEM
+>PRZED WYWOLANIEM
 >
 >a=3 b=5
 >
->WEWNATRZ FUNCKJI wywołanie 1
+>WEWNATRZ FUNCKJI wywolanie 1
 >
 >a=4 b=8
 >
->PO WYWOŁANIU 1
+>PO WYWOLANIU 1
 >
 >a=3 b=5
 >
->WEWNATRZ FUNCKJI wywołanie 2
+>WEWNATRZ FUNCKJI wywolanie 2
 >
 >a=4 b=8
 >
->PO WYWOŁANIU 2
+>PO WYWOLANIU 2
 >
 >a=3 b=5
 
