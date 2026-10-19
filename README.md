@@ -221,6 +221,7 @@ Przykład przedstawiający problem blokowo znajduje się poniżej – schemat (7
 ![image](https://user-images.githubusercontent.com/71324202/143841510-fa248fbc-8e7d-4395-af52-66133199df04.png)
 
 9. Napisz funkcje ceiling, floor i round, odzwierciedlające funkcje matematyczne sufit i podłoga oraz zaokrąglenie matematyczne (skorzystaj z jawnej konwersji typów).
+10. Napisz funkcję `suma_cyfr`, która rekurencyjnie sumuje cyfry nieujemnej liczby całkowitej. Dla `0` funkcja ma zwracać `0`. Przykład: `suma_cyfr(507) == 12`.
 
 ***
 [Poprzednia część](https://github.com/CyberMALab/Wiecej-o-typach-zmiennych-i-nie-tylko.git) | [Spis treści](https://github.com/CyberMALab/Wprowadzenie-do-programowania-w-j-zyku-ANSI-C.git) | [Następna część](https://github.com/CyberMALab/Tablice-jednowymiarowe.git)
