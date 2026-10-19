@@ -9,12 +9,12 @@ Wszystkie zagadnienia poruszone we wcześniejszych rozdziałach były omawiane p
 ![Schemat0](https://user-images.githubusercontent.com/71324202/143834923-c328668b-ffa6-484f-84f1-89ecfd7e974a.png)
 
 ## **Deklaracja i tworzenie własnych funkcji**
-Aby zadeklarować funkcję należy najpierw podać typ wartości jaką funkcja będzie zwracać. Typy wartości są identyczne jak typy wartości zmiennych (`int`, `char`, `float`, `double`). Warto jeszcze wspomnieć tutaj o typie używanym często jako typ funkcji `void`, który nie zwraca żadnej wartości. Funkcja typu `void` nazywana jest procedurą. Drugą składową potrzebną do stworzenia funkcji jest jej nazwa (identyfikator). Również jak w przypadku zmiennych, nazwę funkcji nadaje programista. Po identyfikatorze funkcji konieczne jest wystąpienie nawiasów, wewnątrz których, opcjonalnym jest zadeklarowanie parametrów funkcji. Parametry funkcji to zmienne, podawane funkcji od których zależy wynik działania funkcji. Ostatnim elementem składowym funkcji jest, blok kodu źródłowego funkcji. Należy pamiętać, że każda funkcja określona typem różnym niż `void` musi zwracać wartość za pośrednictwem operatora *return,* odpowiadającą typowi funkcji. 
+Aby zadeklarować funkcję należy najpierw podać typ wartości jaką funkcja będzie zwracać. Typy wartości są identyczne jak typy wartości zmiennych (`int`, `char`, `float`, `double`). Warto jeszcze wspomnieć tutaj o typie używanym często jako typ funkcji `void`, który nie zwraca (nie musi zwracać) żadnej wartości. Funkcja typu `void` nazywana jest procedurą. Drugą składową potrzebną do stworzenia funkcji jest jej nazwa (identyfikator). Również jak w przypadku zmiennych, nazwę funkcji nadaje programista. Po identyfikatorze funkcji konieczne jest wystąpienie nawiasów, wewnątrz których, opcjonalnym jest zadeklarowanie parametrów funkcji. Parametry funkcji to zmienne, podawane funkcji od których zależy wynik działania funkcji. Ostatnim elementem składowym funkcji jest, blok kodu źródłowego funkcji. Należy pamiętać, że każda funkcja określona typem różnym niż `void` musi zwracać wartość za pośrednictwem operatora *return,* odpowiadającą typowi funkcji.
 ```
 typ nazwa_funkcji(typ_zmiennej nazwy_parametrów,…) 
 {
 /* kod źródłowy funkcji */
-/* jeżeli typ funkcji to void to return nie występuje */
+/* jeżeli typ funkcji to void, return nie musi wystąpić */
 	return wartość_zgodna_z_typem_funkcji; 
 /* można użyć zmiennej  jako wartości zwracanej*/
 }
@@ -164,7 +164,7 @@ Funkcje rekurencyjne to takie funkcje, które odwołują się do samej siebie. S
 ![Rysunek1](https://user-images.githubusercontent.com/71324202/143834929-27f96821-8526-40fe-afee-24855d57a9fb.png)
 
 
-Gdzie przypadek, kiedy n=1 jest warunkiem stopu, a wszelkie inne wartości są warunkiem ogólnym. f(n-1) jest krokiem rekurencyjnym w kierunku warunku stopu, zakładając, że n jest podana jako nieujemna liczba całkowita. Taką funkcję reprezentuje program z przykładu (7.4).
+Na schemacie przypadek `n=1` jest warunkiem stopu, a pozostałe dodatnie wartości korzystają z kroku rekurencyjnego `f(n-1)`. Dla `n=0` silnia również jest określona: `0!=1`. Zakładamy, że `n` jest nieujemną liczbą całkowitą. Taką funkcję reprezentuje program z przykładu (7.4).
 
 *Przykład (7.4) funkcja silnia rekurencyjnie*
 
@@ -176,17 +176,14 @@ unsigned silnia (unsigned);
 
 int main() 
 {
-	printf("%d", silnia(3));
+	printf("%u", silnia(3));
 	return 0;
 }
 
 unsigned silnia (unsigned n)
 {
-/* obsłużenie wyjątku n=0 */
-	if(n==0)
-		return 0;
-/* warunek stopu ------ 1 dla n=1 */
-	if(n==1)
+/* warunek stopu ------ 0! = 1 i 1! = 1 */
+	if(n==0 || n==1)
 		return 1;
 /* warunek ogólny ------ n*f(n-1)  */
 	return n*silnia(n-1);
@@ -205,7 +202,7 @@ Przykład przedstawiający problem blokowo znajduje się poniżej – schemat (7
 ![Schemat1](https://user-images.githubusercontent.com/71324202/143834927-11d727cf-d571-40df-a0d4-c460214ff30d.png)
 
 ## **Zadania do samodzielnego wykonania**
-1. Stwórz funkcje max(a,b) i min(a,b), które będą zwracać większą z podanych liczb.
+1. Stwórz funkcje max(a,b) i min(a,b), które będą zwracać odpowiednio większą i mniejszą z podanych liczb.
 2. Stwórz funkcję silnia(a), która będzie iteracyjnie (przy pomocy pętli) liczyć wartość silni z podanej liczby.
 3. Stwórz funkcję `potega(liczba, wykladnik)`, która będzie iteracyjnie liczyć wartość potęgi o podanych parametrach.
 4. Stwórz funkcję `potega(liczba, wykladnik)`, która będzie rekurencyjnie liczyć wartość potęgi o podanych parametrach.
